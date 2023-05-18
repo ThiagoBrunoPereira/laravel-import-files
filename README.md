@@ -52,3 +52,4 @@ O que foi feito:
     
 6. Implementação:
 O controller ficou responsável para criar a ação do usuário responsável para tratativa da ação, nele é chamado o service `sendToQueue` que é reponsável para armazenar os dados do arquivo e em seguida disparar todos os items da fila até o `DocumentJob`,  O  `DocumentJob` encontra a categoria atravez do `categoryRepository` com os parametros recebidos e em seguida o `DocumentJob` salva o job na tabela documents.
+
