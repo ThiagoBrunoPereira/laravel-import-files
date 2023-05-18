@@ -18,7 +18,7 @@ class DocumentsContoller extends Controller
     public function send()
     {
         try {
-            $this->documentService->import();
+            $this->documentService->sendToQueue();
         } catch (\Exception $e) {
             throw ($e);
         }

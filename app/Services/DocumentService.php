@@ -6,7 +6,7 @@ use App\Jobs\DocumentJob;
 
 class DocumentService
 {
-  public function import()
+  public function sendToQueue()
   {
 
     $file = file_get_contents('../storage/data/2023-03-28.json');
