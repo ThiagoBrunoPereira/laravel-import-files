@@ -46,10 +46,10 @@ O que foi feito:
     * Category
 
  
- 5.Rotas:
+ 6.Rotas:
     * [/](http://localhost:8080/) Acesso inicial com botão e form de envio.
-    * [send](http://localhost:8080/send) Envia arquivo e cria os processos
+    * [send](http://localhost:8080/send) Envia arquivo e cria os processos.
     
-6. Implementação:
+7. Implementação:
 O controller ficou responsável para criar a ação do usuário responsável para tratativa da ação, nele é chamado o service `sendToQueue` que é reponsável para armazenar os dados do arquivo e em seguida disparar todos os items da fila até o `DocumentJob`,  O  `DocumentJob` encontra a categoria atravez do `categoryRepository` com os parametros recebidos e em seguida o `DocumentJob` salva o job na tabela documents.
 
