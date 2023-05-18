@@ -46,7 +46,7 @@ O que foi feito:
     * Category
 
  
- 6.Rotas:
+ 6. Rotas:
     * [/](http://localhost:8080/) Acesso inicial com botão e form de envio;
     * [send](http://localhost:8080/send) Envia arquivo e cria os processos;
     
