@@ -1,3 +1,6 @@
+![image](https://github.com/ThiagoBrunoPereira/laravel-import-files/assets/21248731/df1290b4-3708-4ab3-ba57-2eb180c6583f)
+
+
 ### Requimentos
 1. PHP 8.1 >
 2. SQLite
@@ -47,5 +50,5 @@ O que foi feito:
     * [http://localhost:8080/send](http://localhost:8080/send) Envia arquivo e cria os processos;
     
 7. Implementação: 
-    O controller ficou responsável para criar a ação do usuário responsável para tratativa da ação, primeiro o arquivo que vem da requisição é guardado em Storage depois é invocado o service `sendToQueue` que é reponsável para armazenar os dados do arquivo e em seguida disparar todos os items da fila até o `DocumentJob`,  O  `DocumentJob` encontra a categoria atravez do `categoryRepository` com os parametros recebidos e em seguida o `DocumentJob` salva o job na tabela documents;
+    O controller ficou responsável para criar a ação do usuário responsável para tratativa da ação, primeiro o arquivo que vem da requisição é guardado em Storage depois é invocado o service `sendToQueue` que é reponsável para armazenar os dados do arquivo e em seguida disparar todos os items da fila até o `DocumentJob`,  O  `DocumentJob` encontra a categoria atravez do `categoryRepository` com os parametros recebidos e em seguida o `DocumentJob` salva o job na tabela documents.
 
