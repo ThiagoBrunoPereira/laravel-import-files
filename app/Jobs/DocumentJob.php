@@ -15,7 +15,6 @@ class DocumentJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private CategoryRepository $categoryRepository;
     private $document;
 
 
@@ -24,16 +23,15 @@ class DocumentJob implements ShouldQueue
      */
     public function __construct($document)
     {
-        $this->categoryRepository = new CategoryRepository();
         $this->document = $document;
     }
 
     /**
      * Execute the job.
      */
-    public function handle(): void
+    public function handle(CategoryRepository $categoryRepository): void
     {
-        $category = $this->categoryRepository->fetchByName($this->document['categoria']);
+        $category = $categoryRepository->fetchByName($this->document['categoria']);
         Document::create([
             'title' => $this->document['titulo'],
             'contents' => $this->document['conteudo'],
