@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\DocumentService;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentsContoller extends Controller
 {
@@ -15,13 +16,13 @@ class DocumentsContoller extends Controller
         $this->documentService = $documentService;
     }
 
-    public function send()
+    public function send(Request $request)
     {
-        try {
-            $this->documentService->sendToQueue();
-        } catch (\Exception $e) {
-            throw ($e);
-        }
+        $document = $request->file('document');
+        $name = '2023-03-28.' . $document->extension();
+        Storage::putFileAs('files', $document, $name);
+
+        $this->documentService->sendToQueue();
         return redirect()->back()->with('message', 'Arquivo enviado a fila.');
     }
 }
